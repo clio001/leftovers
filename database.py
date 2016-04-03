@@ -17,7 +17,7 @@ class Database():
     def add_item_to_database(self, item: Item):
         connect = sqlite3.connect('/Users/john/haushalt.db')
 
-        connect.execute('insert into tiefkuehler values(?,?,"heute")', [Item])
+        connect.execute('insert into tiefkuehler values(?,?,"heute")', [Item]) #This is where things fall apart. I get the following error message: "sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 2, and there are 1 supplied."
 
         connect.commit()
         connect.close()
