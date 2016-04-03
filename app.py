@@ -1,7 +1,22 @@
-from leftovers import *
+from item import Item
+from database import Database
 
-mydatabase = database()
+item_object = Item()
 
-essen = 'Schrippen'
+MyFreezer = Database()
 
-mydatabase.add_item(essen)
+food = 'fish'
+amount = '1'
+
+item = (food, amount)
+
+item_object.create_item(item)
+
+print("The item is: ")
+item_object.display_item()
+
+MyFreezer.create_database()
+
+MyFreezer.get_content_from_database()
+
+MyFreezer.add_item_to_database(MyFreezer.item)
