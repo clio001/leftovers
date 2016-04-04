@@ -1,22 +1,24 @@
 from item import Item
 from database import Database
 
-item_object = Item()
 
 MyFreezer = Database()
 
 food = 'fish'
 amount = '1'
 
-item = (food, amount)
+item_object = Item(food, amount)  # no setter needed if setting is happening in __init__ method
 
-item_object.create_item(item)
-
-print("The item is: ")
-item_object.display_item()
+print("\nThe item is: ", item_object.get_name(), item_object.get_amount(), '\n')
 
 MyFreezer.create_database()
 
+print('The freezer contained following items')
+print(50 * '=')
 MyFreezer.get_content_from_database()
 
-MyFreezer.add_item_to_database(MyFreezer.item)
+MyFreezer.add_item_to_database(item_object)
+
+print('The freezer contained following items')
+print(50 * '=')
+MyFreezer.get_content_from_database()
